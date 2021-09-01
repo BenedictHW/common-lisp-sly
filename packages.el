@@ -168,4 +168,10 @@
               ("mc" . "compile")
               ("mg" . "nav")
               ("mm" . "macro")
-              ("mt" . "toggle"))))))
+              ("mt" . "toggle")))
+
+      ;; change default value from slime to sly. Org babel is distributed under
+      ;; org-contrib as ob-*lang*.el
+      (eval-after-load "ob-lisp"
+        (setq org-babel-lisp-eval-fn #'sly-eval))
+      )))
