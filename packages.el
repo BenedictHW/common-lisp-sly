@@ -83,6 +83,7 @@
     :commands sly-mode
     :init
     (progn
+      ;; This is set so evil keybindings do not override sly-mode-map-init
       (evil-set-initial-state 'sly-db-mode 'emacs)
       (spacemacs/register-repl 'sly 'sly)
       (setq sly-contribs '(sly-autodoc
@@ -107,7 +108,6 @@
     (progn
       (sly-setup)
       ;; TODO: Add bindings for the SLY debugger?
-      (add-hook 'sly-db-hook 'spacemacs//sly-mode-map-init)
       (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
         "'" 'sly
 
