@@ -174,4 +174,14 @@
       ;; org-contrib as ob-*lang*.el
       (with-eval-after-load "ob-lisp"
         (setq org-babel-lisp-eval-fn #'sly-eval))
+      (with-eval-after-load "poly-org"
+        ;; sly-compile-file sends entire .org file. Narrow to span as done in poly-R
+        ;; https://github.com/polymode/poly-org/issues/25
+        (when (fboundp 'advice-add)
+          (advice-add 'sly-compile-file :around 'pm-execute-narrowed-to-span)
+          (advice-add 'sly-compile-defun :around 'pm-execute-narrowed-to-span)
+          (advice-add 'sly-load-file :around 'pm-execute-narrowed-to-span)
+          (advice-add 'sly-eval-defun :around 'pm-execute-narrowed-to-span)
+          (advice-add 'sly-eval-last-expression :around 'pm-execute-narrowed-to-span)
+          (advice-add 'sly-eval-buffer :around 'pm-execute-narrowed-to-span)))
       )))
