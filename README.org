@@ -1,8 +1,13 @@
-#+TITLE: Common Lisp layer
+#+TITLE: Common Lisp Sly layer
 
 #+TAGS: dsl|layer|lisp|programming
 
-[[file:img/slime.png]]
+          _____    __   __  __
+         / ___/   / /   \ \/ /               |\      _,,,---,,_
+         \__ \   / /     \  /                /,`.-'`'    -.  ;-;;,_
+        ___/ /  / /___   / /                |,4-  ) )-,_..;\ (  `'-'
+       /____/  /_____/  /_/                '---''(_/--'  `-'\_)
+       Sylvester the Cat's Common Lisp IDE for Emacs
 
 * Table of Contents                     :TOC_5_gh:noexport:
 - [[#description][Description]]
@@ -25,18 +30,18 @@ This layer provides support for Common Lisp to Spacemacs.
 ** Features:
 - Syntax highlighting
 - Auto-completion using company
-- Repl support via [[https://github.com/slime/slime][SLIME]]
+- REPL support via [[https://github.com/joaotavora/sly][SLY]]
 - Support for specific lisp navigation styles via =common-lisp-mode=
 - Support for [[http://www.sbcl.org/][sbcl]] backend or any other =common-lisp= implementation
 
 * Install
-If you have previously installed slime in any other way, it is recommended that
+If you have previously installed slime or sly in any other way, it is recommended that
 you uninstall it before proceeding. You should clean up any config files tied to
-slime that are left behind as well. Linux users can just purge the slime package
+slime or sly that are left behind as well. Linux users can just purge the slime package
 if it was a distribution install.
 
 To use this configuration layer, add it to your =~/.spacemacs=. You will need to
-add =common-lisp= to the existing =dotspacemacs-configuration-layers= list in this
+add =common-lisp-sly= to the existing =dotspacemacs-configuration-layers= list in this
 file.
 
 This layer defaults to using [[http://www.sbcl.org/][sbcl]]. If you want to use a different implementation
