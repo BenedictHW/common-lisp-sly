@@ -2,12 +2,14 @@
 
 #+TAGS: dsl|layer|lisp|programming
 
+```lisp
           _____    __   __  __
          / ___/   / /   \ \/ /               |\      _,,,---,,_
          \__ \   / /     \  /                /,`.-'`'    -.  ;-;;,_
         ___/ /  / /___   / /                |,4-  ) )-,_..;\ (  `'-'
        /____/  /_____/  /_/                '---''(_/--'  `-'\_)
        Sylvester the Cat's Common Lisp IDE for Emacs
+```
 
 * Table of Contents                     :TOC_5_gh:noexport:
 - [[#description][Description]]
