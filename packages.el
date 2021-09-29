@@ -141,7 +141,6 @@
         "hH" 'sly-hyperspec-lookup
         "hi" 'sly-inspect-definition
         "hp" 'sly-apropos-package
-        "ht" 'sly-toggle-trace-fdefinition
         "hT" 'sly-untrace-all
         "h<" 'sly-who-calls
         "h>" 'sly-calls-who
@@ -157,7 +156,8 @@
         "si" 'sly
         "sq" 'sly-quit-lisp
 
-        "tf" 'sly-toggle-fancy-trace
+        "Tf" 'sly-toggle-fancy-trace
+        "Tt" 'sly-toggle-trace-fdefinition
 
         ;; Add key bindings for custom eval functions
         "ec" 'spacemacs/cl-eval-current-form-sp
@@ -173,7 +173,7 @@
               ("mc" . "compile")
               ("mg" . "nav")
               ("mm" . "macro")
-              ("mt" . "toggle")))
+              ("mT" . "toggle")))
 
       ;; change default value from slime to sly. Org babel is distributed under
       ;; org-contrib as ob-*lang*.el
