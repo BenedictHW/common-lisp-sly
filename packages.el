@@ -102,7 +102,7 @@
                            sly-tramp)
             inferior-lisp-program "sbcl")
       ;; enable fuzzy matching in code buffer and SLY REPL
-      (add-hook 'sly-repl-mode-hook #'spacemacs//deactivate-smartparens)
+      (add-hook 'sly-mrepl-mode-hook #'spacemacs//deactivate-smartparens)
       (global-company-mode))
     :config
     (progn
