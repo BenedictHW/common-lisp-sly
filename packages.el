@@ -102,16 +102,12 @@
                            sly-tramp)
             inferior-lisp-program "sbcl")
       ;; enable fuzzy matching in code buffer and SLY REPL
-      (add-hook 'sly-mrepl-mode-hook #'spacemacs//deactivate-smartparens)
       (global-company-mode)
-      ;; Replace default behavior. "M-p" unchanged from
-      ;; "sly-mrepl-previous-input-or-button" but "M-n" for
-      ;; "sly-mrepl-next-input-or-button" has been replaced by the more useful
-      ;; "helm-comint-input-ring"
-      (define-key sly-mrepl-mode-map (kbd "M-n") 'helm-comint-input-ring))
+      (add-hook 'sly-mrepl-mode-hook #'spacemacs//deactivate-smartparens))
     :config
     (progn
       (sly-setup)
+      (define-key sly-mrepl-mode-map (kbd "M-n") 'helm-comint-input-ring)
       ;; TODO: Add bindings for the SLY debugger?
       (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
         "'" 'sly
