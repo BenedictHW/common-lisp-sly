@@ -107,7 +107,7 @@
     :config
     (progn
       (sly-setup)
-      (define-key sly-mrepl-mode-map (kbd "M-n") 'helm-comint-input-ring)
+      (define-key sly-mrepl-mode-map (kbd "C-s") 'helm-comint-input-ring)
       ;; TODO: Add bindings for the SLY debugger?
       (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
         "'" 'sly
