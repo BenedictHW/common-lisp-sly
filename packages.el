@@ -110,7 +110,7 @@
       (define-key sly-mrepl-mode-map (kbd "C-s") 'helm-comint-input-ring)
       ;; TODO: Add bindings for the SLY debugger?
       (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
-        "'" 'sly
+        "'" 'sly-mrepl
 
         "cc" 'sly-compile-file
         "cC" 'sly-compile-and-load-file
@@ -118,6 +118,9 @@
         "cf" 'sly-compile-defun
         "cr" 'sly-compile-region
         "cn" 'sly-remove-notes
+
+        "ds" 'sly-stickers-dwim
+        "dS" 'sly-stickers-replay
 
         "eb" 'sly-eval-buffer
         "ef" 'sly-eval-defun
@@ -137,6 +140,7 @@
         "hH" 'sly-hyperspec-lookup
         "hi" 'sly-inspect-definition
         "hp" 'sly-apropos-package
+        "ht" 'sly-trace-dialog
         "hT" 'sly-untrace-all
         "h<" 'sly-who-calls
         "h>" 'sly-calls-who
@@ -153,7 +157,7 @@
         "sq" 'sly-quit-lisp
 
         "Tf" 'sly-toggle-fancy-trace
-        "Tt" 'sly-toggle-trace-fdefinition
+        "Tt" 'sly-trace-dialog-toggle-trace
 
         ;; Add key bindings for custom eval functions
         "ec" 'spacemacs/cl-eval-current-form-sp
