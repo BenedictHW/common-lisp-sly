@@ -24,7 +24,6 @@
 (defconst common-lisp-sly-packages
   '(
     auto-highlight-symbol
-    (common-lisp-snippets :requires yasnippet)
     evil
     evil-cleverparens
     ggtags
@@ -36,12 +35,9 @@
     sly-macrostep
     ))
 
-
 (defun common-lisp-sly/post-init-auto-highlight-symbol ()
   (with-eval-after-load 'auto-highlight-symbol
     (add-to-list 'ahs-plugin-bod-modes 'lisp-mode)))
-
-(defun common-lisp-sly/init-common-lisp-snippets ())
 
 (defun common-lisp-sly/init-sly-macrostep ())
 
