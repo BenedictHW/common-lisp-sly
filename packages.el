@@ -27,7 +27,6 @@
     evil
     evil-cleverparens
     ggtags
-    counsel-gtags
     helm
     helm-gtags
     rainbow-identifiers
@@ -64,9 +63,6 @@
 
 (defun common-lisp-sly/post-init-ggtags ()
   (add-hook 'common-lisp-sly-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
-
-(defun common-lisp-sly/post-init-counsel-gtags ()
-  (spacemacs/counsel-gtags-define-keys-for-mode 'common-lisp-sly-mode))
 
 (defun common-lisp-sly/post-init-helm-gtags ()
   (spacemacs/helm-gtags-define-keys-for-mode 'common-lisp-sly-mode))
