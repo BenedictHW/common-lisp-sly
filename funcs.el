@@ -88,3 +88,12 @@ Requires smartparens because all movement is done using `sp-forward-symbol'."
     (save-excursion
       (sp-forward-symbol)
       (call-interactively 'sly-eval-last-expression))))
+
+(defun spacemacs/sly-mrepl-dwim ()
+  "Open REPL and set PACKAGE and DIRECTORY to FILE.
+Calls `sly-mrepl-sync'. If there is no current SLYNK connection,
+call `sly' beforehand."
+  (interactive)
+  (if (sly-current-connection)
+      (call-interactively 'sly-mrepl-sync)
+      (call-interactively 'sly)))
