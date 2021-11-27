@@ -75,31 +75,17 @@
     :commands sly-mode
     :init
     (progn
-      ;; This is set so evil keybindings do not override sly-mode-map-init
-      (evil-set-initial-state 'sly-db-mode 'emacs)
       (spacemacs/register-repl 'sly 'sly)
-      (setq sly-contribs '(sly-autodoc
-                           sly-fancy
-                           sly-fancy-inspector
-                           sly-fancy-trace
-                           sly-fontifying-fu
-                           sly-indentation
-                           sly-mrepl
-                           sly-package-fu
-                           sly-profiler
-                           sly-retro
-                           sly-scratch
-                           sly-stickers
-                           sly-trace-dialog
-                           sly-tramp)
-            inferior-lisp-program "sbcl")
+      (setq inferior-lisp-program "sbcl")
       ;; enable fuzzy matching in code buffer and SLY REPL
       (global-company-mode)
-      (add-hook 'sly-mrepl-mode-hook #'spacemacs//deactivate-smartparens))
+      ;; This is set so evil keybindings do not override sly-mode-map-init
+      (evil-set-initial-state 'sly-db-mode 'emacs)
+      ;; (add-hook 'sly-mrepl-mode-hook #'spacemacs//deactivate-smartparens)
+      (spacemacs/add-to-hooks 'sly-mode '(lisp-mode-hook))
+      )
     :config
     (progn
-      (sly-setup)
-      (define-key sly-mrepl-mode-map (kbd "C-s") 'helm-comint-input-ring)
       ;; TODO: Add bindings for the SLY debugger?
       (spacemacs/set-leader-keys-for-major-mode 'lisp-mode
         "'" 'spacemacs/sly-mrepl-dwim
@@ -166,7 +152,6 @@
               ("mg" . "nav")
               ("mm" . "macro")
               ("mT" . "toggle")))
-
       ;; change default value from slime to sly. Org babel is distributed under
       ;; org-contrib as ob-*lang*.el
       (with-eval-after-load "ob-lisp"

@@ -94,6 +94,7 @@ Requires smartparens because all movement is done using `sp-forward-symbol'."
 Calls `sly-mrepl-sync'. If there is no current SLYNK connection,
 call `sly' beforehand."
   (interactive)
+  (define-key sly-mrepl-mode-map (kbd "C-s") 'helm-comint-input-ring)
   (if (sly-current-connection)
       (call-interactively 'sly-mrepl-sync)
       (call-interactively 'sly)))
