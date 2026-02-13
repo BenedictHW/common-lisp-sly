@@ -41,7 +41,7 @@
 (defun common-lisp-sly/init-sly-macrostep ())
 
 (defun common-lisp-sly/post-init-evil ()
-  (defadvice sly-last-expression (around evil activate)
+  (define-advice sly-last-expression (around evil activate)
     "In normal-state or motion-state, last sexp ends at point."
     (if (and (not evil-move-beyond-eol)
              (or (evil-normal-state-p) (evil-motion-state-p)))
